@@ -1,0 +1,36 @@
+import random
+import string
+import sys
+from xml.dom.minidom import CharacterData
+from xml.dom.pulldom import CHARACTERS
+print("""
+        *****************************************************************************
+        *             python password generator -Demonspeed09                       *         
+        *****************************************************************************
+        *                            Contact                                        * 
+        *****************************************************************************
+        *                          Developed by                                     * 
+        *                          Sandeep Kumar                                    *          
+        *****************************************************************************                                                                           
+        *                 Email : sandeeep4646vanam@gmail.com                       *                                               
+        *                                                                           *
+        *  Linkedin: https://www.linkedin.com/in/sandeep-kumar-496364215            *                                                   
+        *****************************************************************************
+""")
+print("HELLO EVERYONE ")
+print("welcome to python Password Generator")
+characters = string.ascii_letters + string.digits + string.punctuation
+passwords = int(input("Enter the number of passwords you want to generate:)"))
+#this line generates password
+length = int(input("Enter Your Password length:)"))
+#this lenghe password length 
+file = "passwordlist.txt"
+#file password list is here
+print("Your passwords are saved in the",file, "file")
+sys.stdout = open(file, "w")
+print("Your passwords: \n")
+for pwd in range(passwords):
+    password = ''
+    for i in range (length):
+        password += random.choice(characters)
+    print(password)
